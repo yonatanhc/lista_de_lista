@@ -6,30 +6,24 @@ Menu::Menu(){
 	peliculas_no_vistas = new Lista<Pelicula*>();
 }
 
-void Menu::guardar_actores_a_la_lista(string linea,Pelicula* pelicula){
-	std::stringstream str(linea); //¿............?
-	string actor;
-	while(str >> actor){
-		pelicula->agregar_actor(actor);
-	}
-
-}
 
 void Menu::leer_archivo(char const* archivo_txt,Lista<Pelicula*>* lista_de_peliculas){
-	string linea,nombre,genero,director;
+	string actor,nombre,genero,director;
 	int puntaje;
 
 	ifstream archivo(archivo_txt);
 
 	while(archivo >> nombre){
 		archivo >> genero;
-		archivo >> director;
 		archivo >> puntaje;
+		archivo >> director;
 
 		Pelicula* pelicula = new Pelicula(nombre,genero,director,puntaje);
 
-		getline(archivo,linea);
-		guardar_actores_a_la_lista(linea,pelicula);
+		while(archivo >> actor && actor != "/n"){
+			pelicula->agregar_actor(actor);
+		}
+		
 
 		lista_de_peliculas->agregar(pelicula,lista_de_peliculas->tamanio() + 1);
 	}
@@ -65,7 +59,6 @@ void Menu::mostrar_lista_de_peliculas(Lista<Pelicula*>* lista){
 		Pelicula* pelicula = lista->consultar(i);
 		mostrar_pelicula(pelicula);
 	}
-
 }
 
 Lista<Pelicula*>* Menu::obtener_peliculas_vistas(){

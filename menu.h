@@ -31,8 +31,6 @@ class Menu{
 
 	private:
 
-		void guardar_actores_a_la_lista(string linea,Pelicula* pelicula);
-
 		void leer_archivo(char const* archivo_txt,Lista<Pelicula*>* lista_de_peliculas);
 
 		void mostrar_pelicula(Pelicula* pelicula);

@@ -68,7 +68,7 @@ template < typename Dato >
 Nodo<Dato>* Lista<Dato>::obtener_nodo(int pos){
 
 	Nodo<Dato>* aux = this->primero;
-	for (int i = 0 ; i < pos; ++i) aux = aux->obtener_siguiente();
+	for (int i = 1 ; i < pos; ++i) aux = aux->obtener_siguiente();
 	return aux;
 
 }
