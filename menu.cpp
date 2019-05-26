@@ -172,3 +172,9 @@ void Menu::interfaz(){
 
 	}while(opcion != 5);
 }
+
+Menu::~Menu(){
+	delete peliculas_vistas;
+	delete peliculas_no_vistas;
+	delete peliculas_recomendadas;
+}

@@ -102,7 +102,7 @@ Dato Lista<Dato>::consultar(int pos){
 
 template < typename Dato >
 bool Lista<Dato>::lista_vacia(){
-	return this->tamanio == 0;
+	return this->tam == 0;
 }
 
 template < typename Dato >
