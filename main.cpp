@@ -7,9 +7,9 @@ int main(int argc, char const *argv[]){
 
 	menu->crear_lista_de_peliculas(argv[1],argv[2]);
 
-	menu->mostrar_lista_de_peliculas(menu->obtener_peliculas_vistas());
+	menu->interfaz();
 
-	menu->mostrar_lista_de_peliculas(menu->obtener_peliculas_no_vistas());
+	delete menu;
 	
 	return 0;
 }

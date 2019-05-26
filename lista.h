@@ -118,6 +118,7 @@ void Lista<Dato>::eliminar(int pos) {
 		anterior ->cambiar_siguiente(aux->obtener_siguiente());
 	}
 	this->tam--;
+	delete aux->obtener_dato();
 	delete aux;
 }
 

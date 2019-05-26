@@ -14,18 +14,14 @@ class Menu{
 
 			Lista<Pelicula*>* peliculas_vistas;
 			Lista<Pelicula*>* peliculas_no_vistas;
-
+			Lista<Pelicula*>* peliculas_recomendadas;
 	public:
 
 		Menu();
 
 		void crear_lista_de_peliculas(char const* peliculas_vistas_txt,char const* peliculas_no_vistas_txt);
 
-		void mostrar_lista_de_peliculas(Lista<Pelicula*>* lista);
-
-		Lista<Pelicula*>* obtener_peliculas_vistas();
-
-		Lista<Pelicula*>* obtener_peliculas_no_vistas();
+		void interfaz();
 
 		~Menu();
 
@@ -36,5 +32,17 @@ class Menu{
 		void mostrar_pelicula(Pelicula* pelicula);
 
 		void mostrar_actores(Lista<string>* lista);
+
+		bool coinciden_actores(Pelicula* peli_v,Pelicula* peli_nv);
+
+		bool coincidencia(Pelicula* peli_v,Pelicula* peli_nv);
+
+		bool comparar_lista_pelicula_vista(Pelicula* peli_nv);
+
+		void guardar_actores_a_la_lista(string actor,Pelicula* pelicula);
+
+		void mostrar_lista_de_peliculas(Lista<Pelicula*>* lista);
+
+		void crear_lista_de_peliculas_recomendadas();
 	
 };
