@@ -7,27 +7,18 @@ Menu::Menu(){
 	peliculas_recomendadas = new Lista<Pelicula*>();
 }
 
-void Menu::guardar_actores_a_la_lista(string actor,Pelicula* pelicula){
+/*void Menu::guardar_actores_a_la_lista(string actor,Pelicula* pelicula){
 
-	string act;
-
-	ofstream file;
-	file.open("actores.txt");
-	file << actor;
-	file.close();
-
-	ifstream arch("actores.txt");
-	while(arch >> act){
-		pelicula->agregar_actor(act);
-	}
-	arch.close();
-}
+	pelicula->agregar_actor(actor);
+*/
 
 void Menu::leer_archivo(char const* archivo_txt,Lista<Pelicula*>* lista_de_peliculas){
-	string actor,nombre,genero,director;
+	string actor,nombre,genero,director,guion;
 	int puntaje;
 
 	ifstream archivo(archivo_txt);
+
+	archivo >> guion;
 
 	while(archivo >> nombre){
 		archivo >> genero;
@@ -36,15 +27,10 @@ void Menu::leer_archivo(char const* archivo_txt,Lista<Pelicula*>* lista_de_pelic
 
 		Pelicula* pelicula = new Pelicula(nombre,genero,director,puntaje);
 
-		getline(archivo,actor); // por alguna razon no alcanzo a leer la linea de los actores
-		getline(archivo,actor); // con un solo getline necesito 3, falta revisar...
-		getline(archivo,actor);
-
+		while(archivo >> actor && actor != "-"){
+			pelicula->agregar_actor(actor);
+		}
 		
-		guardar_actores_a_la_lista(actor,pelicula);
-
-		
-
 		lista_de_peliculas->agregar(pelicula,lista_de_peliculas->tamanio() + 1);
 	}
 
@@ -136,13 +122,13 @@ void Menu::interfaz(){
 	do{
 		cout <<"*" << "***************************************" <<"*"<< endl;
 		cout <<"*" << "........MENU DE OPCIONES..............." <<"*"<< endl;
-		cout <<"*" << "mostrar peliculas vistas............[1]" <<"*"<< endl;
-		cout <<"*" << "mostrar peliculas NO vistas.........[2]" <<"*"<< endl;
-		cout <<"*" << "generar peliculas recomendadaas.....[3]" <<"*"<< endl;
-		cout <<"*" << "mostrar peliculas recomendadas......[4]" <<"*"<< endl;
-		cout <<"*" << "salir...............................[5]" <<"*"<< endl;
-		cout <<"*" << ".....elija una de las opciones........." <<"*"<< endl;
-		cout <<"*" << "***************************************" <<"*"<< endl;
+		cout <<"*" << " mostrar peliculas vistas............[1] " <<"*"<< endl;
+		cout <<"*" << " mostrar peliculas NO vistas.........[2] " <<"*"<< endl;
+		cout <<"*" << " generar peliculas recomendadaas.....[3] " <<"*"<< endl;
+		cout <<"*" << " mostrar peliculas recomendadas......[4] " <<"*"<< endl;
+		cout <<"*" << " salir...............................[5] " <<"*"<< endl;
+		cout <<"*" << ".....elija una de las opciones......... " <<"*"<< endl;
+		cout <<"*" << "****************************************" <<"*"<< endl;
 		cin >> opcion;
 
 		switch(opcion){

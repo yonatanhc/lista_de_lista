@@ -39,7 +39,7 @@ class Menu{
 
 		bool comparar_lista_pelicula_vista(Pelicula* peli_nv);
 
-		void guardar_actores_a_la_lista(string actor,Pelicula* pelicula);
+		//void guardar_actores_a_la_lista(string actor,Pelicula* pelicula);
 
 		void mostrar_lista_de_peliculas(Lista<Pelicula*>* lista);
 

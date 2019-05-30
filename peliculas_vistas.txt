@@ -1,4 +1,4 @@
-El_Padrino
+- El_Padrino
 
 Drama
 
@@ -8,7 +8,7 @@ Francis_Coppola
 
 Marlon_Brando Al_Pacino Robert_Duvall 
 
-Harry_Potter
+- Harry_Potter
 
 Ciencia_Ficcion
 
@@ -18,7 +18,7 @@ Chris_Columbus
 
 Daniel_Radcliffe Emma_Watson Alan_Rickman Tom_Felton Maggie_Smith
 
-Que_paso_ayer
+- Que_paso_ayer
 
 Comedia
 
@@ -28,7 +28,7 @@ Todd_Phillips
 
 Bradley_Cooper Mike_Epps
 
-El_Exorcista
+- El_Exorcista
 
 Terror
 
@@ -38,7 +38,7 @@ William_Friedkin
 
 Linda_Blair
 
-Tiburon
+- Tiburon
 
 Terror
 
